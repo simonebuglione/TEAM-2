@@ -20,4 +20,3 @@ class Menu:
 
     def classifica(self):
         pass
-
