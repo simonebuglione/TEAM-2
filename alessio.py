@@ -17,17 +17,39 @@ class Gioco:
         while gioco
         a seconda del livello
         chiama giocox
-        
+
     def aggiorna classifica(classifica)
 
 
 
 class Classifica:
-    dizionario username:punteggio
+    
+    def __init__(self):
+        self.__classifica = {}
+    
+    def aggiungi_punteggio_in_classifica(self, username, punteggio):
+        if username not in self.get_classifica().keys():
+            self.get_classifica()[username] = punteggio
+        else:
+            self.get_classifica()[username] = self.get_classifica()[username] + punteggio
 
-    def visualizza Classifica
+    def get_classifica(self):
+        return self.__classifica
 
-    def salva in File   
+    def visualizza_classifica(self):  
+        print("CLASSIFICA")
+        classifica_ordinata = self.ordina_classifica()
+        print classifica_ordinata
+
+    def ordina_classifica(self):
+        classifica_ordinata = self.get_classifica()
+        return classifica_ordinata
+
+    def salva_su_file(self):
+        pass   
+
+    def carica_da_file(self):
+        pass
     
 
     
