@@ -1,8 +1,8 @@
 class Utente:
-    def __init__(self,nome_utente,password,punteggio):
+    def __init__(self,nome_utente,password):
         self.__nome_utente = nome_utente
         self.__password = password
-        self.__punteggio = punteggio
+        self.__punteggio = 0
 
     def get_utente(self):
         return self.__nome_utente
@@ -23,4 +23,40 @@ class Utente:
         self.__punteggio = punteggio
     
 
+class ArchivioUtenti:
+    def __init__(self):
+        self.__utenti = {}
+
+
+    def get_utenti(self):
+        return self.__utenti
     
+    def set_utenti(self,utenti):
+        self.__utenti = utenti
+
+    def registrazione(self,nome_utente,password):
+        if nome_utente in self.__utenti:
+            return False
+        else:
+            utente = Utente(nome_utente,password)
+            self.__utenti[nome_utente] = utente
+            return True
+        
+
+    def login(self,nome_utente,password):
+        if nome_utente in self.__utenti:
+            utente = self.__utenti[nome_utente]
+            if utente.get_password() == password:
+                return 0  #Login effettuato
+            else:
+                return 1 #Password errata
+        else:
+            return 2 #Nome utente errato
+        
+
+
+
+#utenti = ArchivioUtenti()
+
+#utenti.registrazione("alep_03","1234")
+
