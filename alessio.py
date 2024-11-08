@@ -71,3 +71,5 @@ class Menu:
         
     def registrazione()
         # crea oggetto Utente
+
+        ssjasbjbasjcbasjcascac
